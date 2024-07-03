@@ -82,8 +82,7 @@ HAVING COUNT(c.professor_id) > 1;
 -- 11. Mostra il nome di ogni studente insieme al nome del corso a cui sono iscritti.
 -- res:30 
 SELECT s.name, c.name AS corso
-FROM course_subscription cs JOIN student s ON cs.student_id = s.id 
-							JOIN course c ON cs.course_id = c.id 
+FROM course_subscription cs JOIN student s ON cs.student_id = s.id JOIN course c ON cs.course_id = c.id 
 
 
 
@@ -97,8 +96,7 @@ GROUP BY c.name
 -- 13. Trova gli studenti e i corsi relativi al dipartimento di Chimica.
 -- res:   3
 SELECT s.name AS studente, c.name AS corso
-FROM course_subscription cs JOIN student s ON cs.student_id = s.id 	
-							JOIN course c ON cs.course_id = c.id 
+FROM course_subscription cs JOIN student s ON cs.student_id = s.id JOIN course c ON cs.course_id = c.id 
 WHERE c.department LIKE 'Chimica'
 
 
@@ -106,8 +104,7 @@ WHERE c.department LIKE 'Chimica'
 -- 14. Visualizza i nomi degli studenti e i corsi che hanno frequentato nel 2022.
 -- res: 6
 SELECT s.name AS studente, c.name AS corso, s.subscription_year 
-FROM course_subscription cs JOIN student s ON cs.student_id = s.id 
-							JOIN course c ON cs.course_id = c.id 
+FROM course_subscription cs JOIN student s ON cs.student_id = s.id JOIN course c ON cs.course_id = c.id 
 WHERE s.subscription_year = 2022
 
 
