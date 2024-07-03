@@ -137,7 +137,7 @@ SELECT c.name AS corso_piu_frequentato, COUNT(cs.student_id) AS numero_studenti
 FROM course_subscription cs
 JOIN course c ON cs.course_id = c.id
 GROUP BY cs.course_id, c.name
-ORDER BY numero_studenti 
+ORDER BY numero_studenti DESC
 LIMIT 1
 
 
